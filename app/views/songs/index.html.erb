@@ -1,0 +1,37 @@
+<!-- <% @songs.all.each do |song| %>
+<h4><%= link_to song.title, song_path(song) %></h4>
+<ul>
+<li>Release year: <%= song.release_year %></li>
+<li>Released: <%= song.released %></li>
+<li>Genre: <%= song.genre %></li>
+<li>Artist name: <%= song.artist_name %></li>
+</ul>
+<% end %> -->
+
+<h1>Songs</h1>
+
+<div><%= link_to 'Create Song', new_song_path %></div>
+<br />
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Year</th>
+      <th>Genre</th>
+      <th>Artist name</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @songs.each do |song| %>
+      <tr>
+        <td><%= link_to song.title, song_path(song) %></td>
+        <td><%= song.release_year %></td>
+        <td><%= song.genre %></td>
+        <td><%= song.artist_name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
