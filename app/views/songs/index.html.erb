@@ -1,0 +1,12 @@
+
+
+<h1>Songs List</h1>
+<table>
+  <tbody>
+    <% @songs.each do |song|%>
+      <tr><%= (link_to(song.title, song_path(song)) +" "+"")  %></tr>
+    <%end%>
+  </tbody>
+</table>
+<div></div>
+<div><%= link_to "Create New Song", new_song_path %></div>
