@@ -1,0 +1,14 @@
+<h1>Show Song</h1>
+
+<%= @song.title %><br><br>
+<%= @song.artist_name %><br><br>
+<%= @song.genre %><br><br>
+<%= @song.released %><br><br>
+<%= @song.release_year %><br><br>
+
+
+
+<%= link_to 'Edit', edit_song_path(@song) %>
+ <%= form_for @song, method: :delete do |f| %>
+  <%= f.submit "Delete the song" %>
+  <% end %>
